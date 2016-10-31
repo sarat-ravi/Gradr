@@ -20,9 +20,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    self.window.rootViewController = mainViewController;
+    
+    MainViewController *vc = [[MainViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    navigationController.navigationBar.translucent = NO;
+    // navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.65 blue:0.65 alpha:1.0];
+    // navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.window.rootViewController = navigationController;
+    
+    CGFloat navTitleColor = 0.99;
+    
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor colorWithRed:navTitleColor green:navTitleColor blue:navTitleColor alpha:1.0], NSForegroundColorAttributeName, nil];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    UIColor *lightRed = [UIColor colorWithRed:0.83 green:0.42 blue:0.42 alpha:1.0];
+    [[UINavigationBar appearance] setBarTintColor: lightRed];
+    [[UINavigationBar appearance] setTintColor: [UIColor whiteColor]];
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

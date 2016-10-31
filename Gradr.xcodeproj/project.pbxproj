@@ -118,7 +118,7 @@
 		41D6F5EE1DC2A58E008856F6 /* Gradr */ = {
 			isa = PBXGroup;
 			children = (
-				41D6F61C1DC2A5BE008856F6 /* ViewControllers */,
+				41D6F61C1DC2A5BE008856F6 /* Controllers */,
 				41D6F5F21DC2A58E008856F6 /* AppDelegate.h */,
 				41D6F5F31DC2A58E008856F6 /* AppDelegate.m */,
 				41D6F5F51DC2A58E008856F6 /* Assets.xcassets */,
@@ -155,14 +155,14 @@
 			path = GradrUITests;
 			sourceTree = "<group>";
 		};
-		41D6F61C1DC2A5BE008856F6 /* ViewControllers */ = {
+		41D6F61C1DC2A5BE008856F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				41D6F61D1DC2A5D1008856F6 /* MainViewController.h */,
 				41D6F61E1DC2A5D1008856F6 /* MainViewController.m */,
 				41D6F61F1DC2A5D1008856F6 /* MainViewController.xib */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		9B22AF381A6ABA749449BE3B /* Frameworks */ = {
