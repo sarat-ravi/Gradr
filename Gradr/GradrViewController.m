@@ -6,13 +6,13 @@
 //  Copyright © 2016 Sarat Tallamraju. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "GradrViewController.h"
 
-@interface MainViewController ()
+@interface GradrViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation GradrViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
