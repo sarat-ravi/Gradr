@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "GradrViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    MainViewController *vc = [[MainViewController alloc] init];
+    GradrViewController *vc = [[GradrViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     navigationController.navigationBar.translucent = NO;
     // navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.99 green:0.65 blue:0.65 alpha:1.0];
