@@ -1,8 +1,8 @@
 //
-//  MainViewController.h
+//  GradrViewController.h
 //  Gradr
 //
-//  Created by Sarat Tallamraju on 10/27/16.
+//  Created by Sarat Tallamraju on 11/2/16.
 //  Copyright © 2016 Sarat Tallamraju. All rights reserved.
 //
 
