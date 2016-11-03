@@ -1,14 +1,15 @@
 //
-//  MainViewController.m
+//  GradrViewController.m
 //  Gradr
 //
-//  Created by Sarat Tallamraju on 10/27/16.
+//  Created by Sarat Tallamraju on 11/2/16.
 //  Copyright © 2016 Sarat Tallamraju. All rights reserved.
 //
 
 #import "GradrViewController.h"
 
 @interface GradrViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *totalScoreLabel;
 
 @end
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Gradr";
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
