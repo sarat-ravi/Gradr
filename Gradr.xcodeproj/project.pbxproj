@@ -16,6 +16,7 @@
 		41D6F60F1DC2A58E008856F6 /* GradrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D6F60E1DC2A58E008856F6 /* GradrUITests.m */; };
 		41F1664B1DCADEEE005AB3FB /* GradrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F166491DCADEEE005AB3FB /* GradrViewController.m */; };
 		41F1664C1DCADEEE005AB3FB /* GradrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F1664A1DCADEEE005AB3FB /* GradrViewController.xib */; };
+		41F166511DCE5D3D005AB3FB /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F166501DCE5D3D005AB3FB /* CanvasView.m */; };
 		6A30670DA9A1124044A67457 /* libPods-Gradr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ACE024D81A51D5E8DE45A5 /* libPods-Gradr.a */; };
 		C5B524F51445200DB7CC70E5 /* libPods-GradrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B60E035795B1789DCB1895 /* libPods-GradrTests.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		41F166481DCADEEE005AB3FB /* GradrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradrViewController.h; sourceTree = "<group>"; };
 		41F166491DCADEEE005AB3FB /* GradrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradrViewController.m; sourceTree = "<group>"; };
 		41F1664A1DCADEEE005AB3FB /* GradrViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradrViewController.xib; sourceTree = "<group>"; };
+		41F1664F1DCE5D3D005AB3FB /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		41F166501DCE5D3D005AB3FB /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		74E4C91E49CFB5F347B2327C /* Pods-Gradr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gradr/Pods-Gradr.debug.xcconfig"; sourceTree = "<group>"; };
 		76B60E035795B1789DCB1895 /* libPods-GradrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GradrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1FA45521D2C2A2EB6AF0BB /* Pods-GradrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradrUITests/Pods-GradrUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		41D6F5EE1DC2A58E008856F6 /* Gradr */ = {
 			isa = PBXGroup;
 			children = (
+				41F1664E1DCE5B4C005AB3FB /* Views */,
 				41D6F61C1DC2A5BE008856F6 /* Controllers */,
 				41D6F5F21DC2A58E008856F6 /* AppDelegate.h */,
 				41D6F5F31DC2A58E008856F6 /* AppDelegate.m */,
@@ -163,6 +167,15 @@
 				41F1664A1DCADEEE005AB3FB /* GradrViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		41F1664E1DCE5B4C005AB3FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41F1664F1DCE5D3D005AB3FB /* CanvasView.h */,
+				41F166501DCE5D3D005AB3FB /* CanvasView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9B22AF381A6ABA749449BE3B /* Frameworks */ = {
@@ -473,6 +486,7 @@
 			files = (
 				41F1664B1DCADEEE005AB3FB /* GradrViewController.m in Sources */,
 				41D6F5F41DC2A58E008856F6 /* AppDelegate.m in Sources */,
+				41F166511DCE5D3D005AB3FB /* CanvasView.m in Sources */,
 				41D6F5F11DC2A58E008856F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
