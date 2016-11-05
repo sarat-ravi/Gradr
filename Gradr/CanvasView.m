@@ -43,19 +43,22 @@
 
 - (IBAction)onDrawing:(UIPanGestureRecognizer *)sender {
     switch (sender.state) {
-        case UIGestureRecognizerStateBegan:
+        case UIGestureRecognizerStateBegan: {
             NSLog(@"Started");
             break;
-        case UIGestureRecognizerStateChanged:
-            NSLog(@"Changed");
+        } case UIGestureRecognizerStateChanged: {
             CGPoint delta = [sender translationInView: self];
-            break;
-        case UIGestureRecognizerStateEnded:
-            NSLog(@"Ended");
             CGPoint velocity = [sender velocityInView: self];
+            // NSLog(@"delta.x: %f, delta.y: %f", delta.x, delta.y);
+            // NSLog(@"velocity.x: %f, velocity.y: %f", velocity.x, velocity.y);
             break;
-        default:
+        } case UIGestureRecognizerStateEnded: {
+            CGPoint velocity = [sender velocityInView: self];
+            // NSLog(@"velocity.x: %f, velocity.y: %f", velocity.x, velocity.y);
             break;
+        } default: {
+            break;
+        }
     }
 }
 
