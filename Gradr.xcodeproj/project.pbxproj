@@ -17,7 +17,8 @@
 		41F1664B1DCADEEE005AB3FB /* GradrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F166491DCADEEE005AB3FB /* GradrViewController.m */; };
 		41F1664C1DCADEEE005AB3FB /* GradrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F1664A1DCADEEE005AB3FB /* GradrViewController.xib */; };
 		41F166511DCE5D3D005AB3FB /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F166501DCE5D3D005AB3FB /* CanvasView.m */; };
-		41F166531DCE6042005AB3FB /* CanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F166521DCE6042005AB3FB /* CanvasView.xib */; };
+		41F1665E1DCEC2B0005AB3FB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F1665D1DCEC2B0005AB3FB /* GLKit.framework */; };
+		41F166601DCEC2B8005AB3FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F1665F1DCEC2B8005AB3FB /* OpenGLES.framework */; };
 		6A30670DA9A1124044A67457 /* libPods-Gradr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ACE024D81A51D5E8DE45A5 /* libPods-Gradr.a */; };
 		C5B524F51445200DB7CC70E5 /* libPods-GradrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B60E035795B1789DCB1895 /* libPods-GradrTests.a */; };
 /* End PBXBuildFile section */
@@ -60,7 +61,8 @@
 		41F1664A1DCADEEE005AB3FB /* GradrViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradrViewController.xib; sourceTree = "<group>"; };
 		41F1664F1DCE5D3D005AB3FB /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
 		41F166501DCE5D3D005AB3FB /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
-		41F166521DCE6042005AB3FB /* CanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasView.xib; sourceTree = "<group>"; };
+		41F1665D1DCEC2B0005AB3FB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		41F1665F1DCEC2B8005AB3FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		74E4C91E49CFB5F347B2327C /* Pods-Gradr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gradr/Pods-Gradr.debug.xcconfig"; sourceTree = "<group>"; };
 		76B60E035795B1789DCB1895 /* libPods-GradrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GradrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1FA45521D2C2A2EB6AF0BB /* Pods-GradrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradrUITests/Pods-GradrUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F166601DCEC2B8005AB3FB /* OpenGLES.framework in Frameworks */,
+				41F1665E1DCEC2B0005AB3FB /* GLKit.framework in Frameworks */,
 				6A30670DA9A1124044A67457 /* libPods-Gradr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +180,6 @@
 			children = (
 				41F1664F1DCE5D3D005AB3FB /* CanvasView.h */,
 				41F166501DCE5D3D005AB3FB /* CanvasView.m */,
-				41F166521DCE6042005AB3FB /* CanvasView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,8 @@
 		9B22AF381A6ABA749449BE3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41F1665F1DCEC2B8005AB3FB /* OpenGLES.framework */,
+				41F1665D1DCEC2B0005AB3FB /* GLKit.framework */,
 				38ACE024D81A51D5E8DE45A5 /* libPods-Gradr.a */,
 				76B60E035795B1789DCB1895 /* libPods-GradrTests.a */,
 				AA4600BB40F9EA441475413E /* libPods-GradrUITests.a */,
@@ -324,7 +329,6 @@
 			files = (
 				41D6F5F61DC2A58E008856F6 /* Assets.xcassets in Resources */,
 				41F1664C1DCADEEE005AB3FB /* GradrViewController.xib in Resources */,
-				41F166531DCE6042005AB3FB /* CanvasView.xib in Resources */,
 				41D6F5F91DC2A58E008856F6 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
