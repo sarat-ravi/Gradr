@@ -22,8 +22,8 @@
 @interface CanvasView : GLKView
 
 @property (assign, nonatomic) UIColor *strokeColor;
-@property (assign, nonatomic) BOOL hasSignature;
-@property (strong, nonatomic) UIImage *signatureImage;
+@property (assign, nonatomic) BOOL hasDrawing;
+@property (strong, nonatomic) UIImage *drawnImage;
 
 @property (weak, nonatomic) id<CanvasViewDelegate> canvasDelegate;
 

@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GradrViewController">
             <connections>
+                <outlet property="canvasView" destination="tTa-Ew-lcg" id="lLT-GD-Imy"/>
+                <outlet property="debugOutputImage" destination="Vsj-iP-zCa" id="3Mk-Qb-ua2"/>
                 <outlet property="totalScoreLabel" destination="LrW-jw-Vlq" id="AUT-gc-9gi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

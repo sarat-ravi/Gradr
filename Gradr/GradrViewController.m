@@ -7,9 +7,12 @@
 //
 
 #import "GradrViewController.h"
+#import "CanvasView.h"
 
 @interface GradrViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property (strong, nonatomic) IBOutlet CanvasView *canvasView;
+@property (strong, nonatomic) IBOutlet UIImageView *debugOutputImage;
 
 @end
 
@@ -17,6 +20,9 @@
 
 - (IBAction)onEraseButtonClicked:(id)sender {
     NSLog(@"Erase button clicked");
+    UIImage *image = self.canvasView.drawnImage;
+    self.debugOutputImage.image = image;
+    [self.canvasView erase];
 }
 
 - (void)viewDidLoad {
