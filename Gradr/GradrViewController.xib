@@ -26,16 +26,33 @@
                     <color key="backgroundColor" red="0.92098627645502651" green="0.92098627645502651" blue="0.92098627645502651" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vsj-iP-zCa">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="I5l-7d-hsu"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEh-Vb-AcR">
+                    <state key="normal" title="Erase"/>
+                    <connections>
+                        <action selector="onEraseButtonClicked:" destination="-1" eventType="touchUpInside" id="NSE-Al-Rlt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="LrW-jw-Vlq" firstAttribute="centerY" secondItem="pEh-Vb-AcR" secondAttribute="centerY" id="2Fo-6D-spm"/>
+                <constraint firstItem="pEh-Vb-AcR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="8Pf-Pc-cFm"/>
+                <constraint firstAttribute="trailing" secondItem="Vsj-iP-zCa" secondAttribute="trailing" id="GUj-AP-o3V"/>
                 <constraint firstItem="tTa-Ew-lcg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gx5-30-WSN"/>
                 <constraint firstItem="LrW-jw-Vlq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="YmO-Xh-SIi"/>
-                <constraint firstItem="tTa-Ew-lcg" firstAttribute="top" secondItem="LrW-jw-Vlq" secondAttribute="bottom" constant="10" id="abp-PD-8JX"/>
+                <constraint firstItem="Vsj-iP-zCa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jnh-Fj-zTT"/>
+                <constraint firstItem="tTa-Ew-lcg" firstAttribute="top" secondItem="Vsj-iP-zCa" secondAttribute="bottom" constant="10" id="kON-hM-R9Z"/>
+                <constraint firstItem="Vsj-iP-zCa" firstAttribute="top" secondItem="LrW-jw-Vlq" secondAttribute="bottom" constant="10" id="u4W-T9-Kpo"/>
                 <constraint firstAttribute="trailing" secondItem="tTa-Ew-lcg" secondAttribute="trailing" id="xBd-yd-chG"/>
                 <constraint firstAttribute="bottom" secondItem="tTa-Ew-lcg" secondAttribute="bottom" id="xzC-Bk-lTE"/>
                 <constraint firstItem="LrW-jw-Vlq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yhY-uS-XaW"/>
             </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
 </document>

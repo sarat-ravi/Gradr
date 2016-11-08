@@ -15,6 +15,10 @@
 
 @implementation GradrViewController
 
+- (IBAction)onEraseButtonClicked:(id)sender {
+    NSLog(@"Erase button clicked");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
