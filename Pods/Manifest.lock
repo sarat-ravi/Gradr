@@ -14,13 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - TesseractOCRiOS
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
-PODFILE CHECKSUM: 2a8ed0da535a4027a85cfe92a70cb52ddf0ae41e
+PODFILE CHECKSUM: 376f1b811bfb79ab142704e99350b406b5430a64
 
 COCOAPODS: 1.1.1
