@@ -14,15 +14,21 @@
 @property (strong, nonatomic) IBOutlet CanvasView *canvasView;
 @property (strong, nonatomic) IBOutlet UIImageView *debugOutputImage;
 
+- (void)onImageDrawnOnCanvas: (CanvasView*) canvasView;
+
 @end
 
 @implementation GradrViewController
 
 - (IBAction)onEraseButtonClicked:(id)sender {
     NSLog(@"Erase button clicked");
-    UIImage *image = self.canvasView.drawnImage;
+    [self onImageDrawnOnCanvas: self.canvasView];
+}
+
+- (void)onImageDrawnOnCanvas: (CanvasView*) canvasView {
+    UIImage *image = canvasView.drawnImage;
     self.debugOutputImage.image = image;
-    [self.canvasView erase];
+    [canvasView erase];
 }
 
 - (void)viewDidLoad {
