@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TesseractOCR/TesseractOCR.h>
 
-@interface GradrViewController : UIViewController
+@interface GradrViewController : UIViewController <G8TesseractDelegate>
 
 @end

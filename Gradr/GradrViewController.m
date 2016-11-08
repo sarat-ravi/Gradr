@@ -14,7 +14,7 @@
 @property (strong, nonatomic) IBOutlet CanvasView *canvasView;
 @property (strong, nonatomic) IBOutlet UIImageView *debugOutputImage;
 
-- (void)onImageDrawnOnCanvas: (CanvasView*) canvasView;
+// @property (strong, nonatomic) G8Tesseract *tesseract;
 
 @end
 
@@ -27,13 +27,39 @@
 
 - (void)onImageDrawnOnCanvas: (CanvasView*) canvasView {
     UIImage *image = canvasView.drawnImage;
-    self.debugOutputImage.image = image;
+    float number = [self recognizeNumberFromImage: image];
     [canvasView erase];
+}
+
+- (float)recognizeNumberFromImage: (UIImage*)image {
+    G8Tesseract *tesseract = [[G8Tesseract alloc] initWithLanguage: @"eng"];
+    tesseract.delegate = self;
+    tesseract.charWhitelist = @"0123456789";
+    tesseract.image = image;
+    [tesseract recognize];
+    
+    NSLog(@"recognized text: %@", [tesseract recognizedText]);
+    
+    NSArray *characterBoxes = [tesseract recognizedBlocksByIteratorLevel:G8PageIteratorLevelSymbol];
+    UIImage *imageWithBlocks = [tesseract imageWithBlocks:characterBoxes drawText:YES thresholded:NO];
+    self.debugOutputImage.image = imageWithBlocks;
+    
+    return 0.0;
+}
+
+- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    NSLog(@"recognition progress: %lu", (unsigned long)tesseract.progress);
+}
+
+- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    return NO;  // return YES, if you need to interrupt tesseract before it finishes
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // self.tesseract.maximumRecognitionTime = 2.0;
 }
 
 - (void)didReceiveMemoryWarning {
