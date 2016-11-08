@@ -127,6 +127,7 @@
 		41D6F5EE1DC2A58E008856F6 /* Gradr */ = {
 			isa = PBXGroup;
 			children = (
+				41F166661DCECCF5005AB3FB /* Libs */,
 				41F1664E1DCE5B4C005AB3FB /* Views */,
 				41D6F61C1DC2A5BE008856F6 /* Controllers */,
 				41D6F5F21DC2A58E008856F6 /* AppDelegate.h */,
@@ -182,6 +183,13 @@
 				41F166501DCE5D3D005AB3FB /* CanvasView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		41F166661DCECCF5005AB3FB /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 		9B22AF381A6ABA749449BE3B /* Frameworks */ = {
