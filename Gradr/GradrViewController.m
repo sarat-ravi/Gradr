@@ -7,9 +7,11 @@
 //
 
 #import "GradrViewController.h"
+#import "STDigitRecognizer.h"
 
 @interface GradrViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property (strong, nonatomic) STDigitRecognizer *digitRecognizer;
 
 @end
 
@@ -18,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.digitRecognizer = [[STDigitRecognizer alloc] initWithString:@"initString"];
+    NSString* classifierFileName = [self.digitRecognizer getClassifierFilename];
+    NSLog(classifierFileName);
 }
 
 - (void)didReceiveMemoryWarning {
