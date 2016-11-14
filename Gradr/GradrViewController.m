@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.digitRecognizer = [[STDigitRecognizer alloc] initWithString:@"initString"];
-    NSString* classifierFileName = [self.digitRecognizer getClassifierFilename];
+    NSString* classifierFileName = [self.digitRecognizer getInputString];
     NSLog(classifierFileName);
 }
 

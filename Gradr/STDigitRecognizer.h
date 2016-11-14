@@ -12,6 +12,6 @@
 
 -(instancetype) initWithString: (NSString*) inputString;
 
--(NSString*) getClassifierFilename;
+-(NSString*) getInputString;
 
 @end

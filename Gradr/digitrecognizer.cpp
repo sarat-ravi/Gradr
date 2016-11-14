@@ -1,9 +1,9 @@
 #include "digitrecognizer.hpp"
 
-DigitRecognizer::DigitRecognizer(std::string classifierFileName) : classifierFileName(classifierFileName) {
+DigitRecognizer::DigitRecognizer(std::string inputString) : inputString(inputString) {
 }
 
-const std::string& DigitRecognizer::getClassifierFileName() const {
-    return classifierFileName;
+const std::string& DigitRecognizer::getInputString() const {
+    return inputString;
 }
     

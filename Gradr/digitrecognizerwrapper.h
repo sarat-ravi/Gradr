@@ -9,7 +9,7 @@ extern "C" {
     DigitRecognizer* newDigitRecognizer(const char*);
     
     // class methods
-    const char* DigitRecognizer_getClassifierFileName(DigitRecognizer* digitRecognizer);
+    const char* DigitRecognizer_getInputString(DigitRecognizer* digitRecognizer);
     
     void deleteDigitRecognizer(DigitRecognizer* digitRecognizer);
     

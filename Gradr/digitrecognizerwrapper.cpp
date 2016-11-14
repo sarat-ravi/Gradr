@@ -4,12 +4,12 @@
 
     
 extern "C" {
-    DigitRecognizer* newDigitRecognizer(const char* classifierFileName) {
-        return new DigitRecognizer(std::string(classifierFileName));
+    DigitRecognizer* newDigitRecognizer(const char* inputString) {
+        return new DigitRecognizer(std::string(inputString));
     }
     
-    const char* DigitRecognizer_getClassifierFileName(DigitRecognizer* digitRecognizer) {
-        return digitRecognizer->getClassifierFileName().c_str();
+    const char* DigitRecognizer_getInputString(DigitRecognizer* digitRecognizer) {
+        return digitRecognizer->getInputString().c_str();
     }
     
     void deleteDigitRecognizer(DigitRecognizer* digitRecognizer) {

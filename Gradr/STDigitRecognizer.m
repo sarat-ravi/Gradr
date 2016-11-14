@@ -25,9 +25,9 @@
     return self;
 }
 
--(NSString*) getClassifierFilename {
-    const char* classifierFileName = DigitRecognizer_getClassifierFileName(digitRecognizer);
-    return [NSString stringWithUTF8String: classifierFileName];
+-(NSString*) getInputString {
+    const char* inputString = DigitRecognizer_getInputString(digitRecognizer);
+    return [NSString stringWithUTF8String: inputString];
 }
 
 @end

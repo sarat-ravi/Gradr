@@ -4,9 +4,9 @@
 
 class DigitRecognizer {
 public:
-    explicit DigitRecognizer(std::string classifierFileName);
-    const std::string& getClassifierFileName() const;
+    explicit DigitRecognizer(std::string inputString);
+    const std::string& getInputString() const;
 private:
-    std::string classifierFileName;
+    std::string inputString;
 };
     
