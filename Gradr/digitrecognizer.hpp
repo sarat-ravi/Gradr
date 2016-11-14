@@ -2,6 +2,8 @@
 
 #include <string>
 
+namespace srt {
+    
 class DigitRecognizer {
 public:
     explicit DigitRecognizer(std::string inputString);
@@ -10,3 +12,4 @@ private:
     std::string inputString;
 };
     
+} // namespace srt

@@ -2,17 +2,18 @@
 #include "DigitRecognizer.hpp"
 #include "digitrecognizerwrapper.h"
 
+using namespace srt;
     
 extern "C" {
-    DigitRecognizer* newDigitRecognizer(const char* inputString) {
+    DigitRecognizerCpp* newDigitRecognizer(const char* inputString) {
         return new DigitRecognizer(std::string(inputString));
     }
     
-    const char* DigitRecognizer_getInputString(DigitRecognizer* digitRecognizer) {
-        return digitRecognizer->getInputString().c_str();
+    const char* DigitRecognizer_getInputString(DigitRecognizerCpp* digitRecognizer) {
+        return ((DigitRecognizer*)digitRecognizer)->getInputString().c_str();
     }
     
-    void deleteDigitRecognizer(DigitRecognizer* digitRecognizer) {
-        delete digitRecognizer;
+    void deleteDigitRecognizer(DigitRecognizerCpp* digitRecognizer) {
+        delete (DigitRecognizer*)digitRecognizer;
     }
 }

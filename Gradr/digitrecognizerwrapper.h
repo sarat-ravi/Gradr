@@ -4,14 +4,14 @@
 extern "C" {
 #endif
 
-    typedef struct DigitRecognizer DigitRecognizer;
+    typedef void DigitRecognizerCpp;
     
-    DigitRecognizer* newDigitRecognizer(const char*);
+    DigitRecognizerCpp* newDigitRecognizer(const char*);
     
     // class methods
-    const char* DigitRecognizer_getInputString(DigitRecognizer* digitRecognizer);
+    const char* DigitRecognizer_getInputString(DigitRecognizerCpp* digitRecognizer);
     
-    void deleteDigitRecognizer(DigitRecognizer* digitRecognizer);
+    void deleteDigitRecognizer(DigitRecognizerCpp* digitRecognizer);
     
 #ifdef __cplusplus
 }

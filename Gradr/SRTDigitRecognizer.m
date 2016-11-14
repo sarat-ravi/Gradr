@@ -6,16 +6,16 @@
 //  Copyright © 2016 Sarat Tallamraju. All rights reserved.
 //
 
-#import "STDigitRecognizer.h"
+#import "SRTDigitRecognizer.h"
 #include "digitrecognizerwrapper.h"
 
-@interface STDigitRecognizer () {
-    DigitRecognizer *digitRecognizer;
+@interface SRTDigitRecognizer () {
+    DigitRecognizerCpp *digitRecognizer;
 }
 
 @end
 
-@implementation STDigitRecognizer
+@implementation SRTDigitRecognizer
 
 -(instancetype) initWithString: (NSString*) inputString {
     self = [super init];

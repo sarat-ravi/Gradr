@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface STDigitRecognizer : NSObject
+@interface SRTDigitRecognizer : NSObject
 
 -(instancetype) initWithString: (NSString*) inputString;
 

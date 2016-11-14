@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		294886136247F790027328AB /* libPods-GradrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4600BB40F9EA441475413E /* libPods-GradrUITests.a */; };
 		419575A61DD93B790052BA01 /* digitrecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 419575A41DD93B790052BA01 /* digitrecognizer.cpp */; };
-		419575A91DD93F8D0052BA01 /* STDigitRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 419575A81DD93F8D0052BA01 /* STDigitRecognizer.m */; };
+		419575A91DD93F8D0052BA01 /* SRTDigitRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 419575A81DD93F8D0052BA01 /* SRTDigitRecognizer.m */; };
 		419575AC1DD943B10052BA01 /* digitrecognizerwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 419575AA1DD943B10052BA01 /* digitrecognizerwrapper.cpp */; };
 		41D6F5F11DC2A58E008856F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D6F5F01DC2A58E008856F6 /* main.m */; };
 		41D6F5F41DC2A58E008856F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D6F5F31DC2A58E008856F6 /* AppDelegate.m */; };
@@ -48,8 +48,8 @@
 		38ACE024D81A51D5E8DE45A5 /* libPods-Gradr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gradr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		419575A41DD93B790052BA01 /* digitrecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = digitrecognizer.cpp; sourceTree = "<group>"; };
 		419575A51DD93B790052BA01 /* digitrecognizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = digitrecognizer.hpp; sourceTree = "<group>"; };
-		419575A71DD93F8D0052BA01 /* STDigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDigitRecognizer.h; sourceTree = "<group>"; };
-		419575A81DD93F8D0052BA01 /* STDigitRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDigitRecognizer.m; sourceTree = "<group>"; };
+		419575A71DD93F8D0052BA01 /* SRTDigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTDigitRecognizer.h; sourceTree = "<group>"; };
+		419575A81DD93F8D0052BA01 /* SRTDigitRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTDigitRecognizer.m; sourceTree = "<group>"; };
 		419575AA1DD943B10052BA01 /* digitrecognizerwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = digitrecognizerwrapper.cpp; sourceTree = "<group>"; };
 		419575AB1DD943B10052BA01 /* digitrecognizerwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = digitrecognizerwrapper.h; sourceTree = "<group>"; };
 		41D6F5EC1DC2A58E008856F6 /* Gradr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gradr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,8 +199,8 @@
 			children = (
 				419575A41DD93B790052BA01 /* digitrecognizer.cpp */,
 				419575A51DD93B790052BA01 /* digitrecognizer.hpp */,
-				419575A71DD93F8D0052BA01 /* STDigitRecognizer.h */,
-				419575A81DD93F8D0052BA01 /* STDigitRecognizer.m */,
+				419575A71DD93F8D0052BA01 /* SRTDigitRecognizer.h */,
+				419575A81DD93F8D0052BA01 /* SRTDigitRecognizer.m */,
 				419575AA1DD943B10052BA01 /* digitrecognizerwrapper.cpp */,
 				419575AB1DD943B10052BA01 /* digitrecognizerwrapper.h */,
 			);
@@ -521,7 +521,7 @@
 				419575A61DD93B790052BA01 /* digitrecognizer.cpp in Sources */,
 				41F166511DCE5D3D005AB3FB /* CanvasView.m in Sources */,
 				41D6F5F11DC2A58E008856F6 /* main.m in Sources */,
-				419575A91DD93F8D0052BA01 /* STDigitRecognizer.m in Sources */,
+				419575A91DD93F8D0052BA01 /* SRTDigitRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
