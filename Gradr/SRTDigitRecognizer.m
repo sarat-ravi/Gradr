@@ -30,4 +30,8 @@
     return [NSString stringWithUTF8String: inputString];
 }
 
+-(void) dealloc {
+    deleteDigitRecognizer(digitRecognizer);
+}
+
 @end

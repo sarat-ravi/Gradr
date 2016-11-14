@@ -14,4 +14,6 @@
 
 -(NSString*) getInputString;
 
+-(void) dealloc;
+
 @end
