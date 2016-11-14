@@ -7,6 +7,7 @@ target 'Gradr' do
 
   # Pods for Gradr
   pod "AFNetworking"
+  pod "OpenCV"
 
   target 'GradrTests' do
     inherit! :search_paths

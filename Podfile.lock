@@ -14,13 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - OpenCV (3.1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - OpenCV
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  OpenCV: 41c4250e2b06a394d6fbb634b5fa622cdd846018
 
-PODFILE CHECKSUM: 2a8ed0da535a4027a85cfe92a70cb52ddf0ae41e
+PODFILE CHECKSUM: 653397379cb8f618c7f0593f57dcbd968e74fa6c
 
 COCOAPODS: 1.1.1
