@@ -202,16 +202,16 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 - (void)erase {
     length = 0;
     dotsLength = 0;
-    self.hasSignature = NO;
+    self.hasDrawing = NO;
 	
 	[self setNeedsDisplay];
 }
 
 
 
-- (UIImage *)signatureImage
+- (UIImage *)drawing
 {
-	if (!self.hasSignature)
+	if (!self.hasDrawing)
 		return nil;
 
 //    self.hidden = YES;
@@ -309,7 +309,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         addVertex(&length, startPoint);
         addVertex(&length, previousVertex);
 		
-		self.hasSignature = YES;
+		self.hasDrawing = YES;
         
     } else if ([p state] == UIGestureRecognizerStateChanged) {
         
