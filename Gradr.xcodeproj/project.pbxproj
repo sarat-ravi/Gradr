@@ -303,7 +303,7 @@
 				TargetAttributes = {
 					41D6F5EB1DC2A58E008856F6 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Z66WJ4A939;
+						DevelopmentTeam = X2T8PR324Y;
 						ProvisioningStyle = Automatic;
 					};
 					41D6F5FE1DC2A58E008856F6 = {
@@ -657,7 +657,9 @@
 			baseConfigurationReference = 74E4C91E49CFB5F347B2327C /* Pods-Gradr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z66WJ4A939;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X2T8PR324Y;
 				INFOPLIST_FILE = Gradr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sarattall.ios.Gradr;
@@ -670,7 +672,8 @@
 			baseConfigurationReference = 35AE7FFC85085EA6C3130CE7 /* Pods-Gradr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z66WJ4A939;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X2T8PR324Y;
 				INFOPLIST_FILE = Gradr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sarattall.ios.Gradr;
