@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SRTDigitRecognizer : NSObject
 
 -(instancetype) initWithString: (NSString*) inputString;
 
 -(NSString*) getInputString;
-
--(void) dealloc;
+-(int) recognizeDigitFromImage: (UIImage*) image atFrame: (CGRect) bounds;
 
 @end
