@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		294886136247F790027328AB /* libPods-GradrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4600BB40F9EA441475413E /* libPods-GradrUITests.a */; };
+		4103257F1DDC46DC002776A7 /* Knowledge in Resources */ = {isa = PBXBuildFile; fileRef = 4103257E1DDC46DC002776A7 /* Knowledge */; };
 		419575A61DD93B790052BA01 /* digitrecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 419575A41DD93B790052BA01 /* digitrecognizer.cpp */; };
 		419575A91DD93F8D0052BA01 /* SRTDigitRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 419575A81DD93F8D0052BA01 /* SRTDigitRecognizer.mm */; };
 		41D6F5F11DC2A58E008856F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D6F5F01DC2A58E008856F6 /* main.m */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		35AE7FFC85085EA6C3130CE7 /* Pods-Gradr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gradr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gradr/Pods-Gradr.release.xcconfig"; sourceTree = "<group>"; };
 		38ACE024D81A51D5E8DE45A5 /* libPods-Gradr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gradr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4103257E1DDC46DC002776A7 /* Knowledge */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Knowledge; sourceTree = SOURCE_ROOT; };
 		419575A41DD93B790052BA01 /* digitrecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = digitrecognizer.cpp; sourceTree = "<group>"; };
 		419575A51DD93B790052BA01 /* digitrecognizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = digitrecognizer.hpp; sourceTree = "<group>"; };
 		419575A71DD93F8D0052BA01 /* SRTDigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTDigitRecognizer.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				41D6F5F51DC2A58E008856F6 /* Assets.xcassets */,
 				41D6F5F71DC2A58E008856F6 /* LaunchScreen.storyboard */,
 				41D6F5FA1DC2A58E008856F6 /* Info.plist */,
+				4103257E1DDC46DC002776A7 /* Knowledge */,
 				41D6F5EF1DC2A58E008856F6 /* Supporting Files */,
 			);
 			path = Gradr;
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D6F5F61DC2A58E008856F6 /* Assets.xcassets in Resources */,
+				4103257F1DDC46DC002776A7 /* Knowledge in Resources */,
 				41F1664C1DCADEEE005AB3FB /* GradrViewController.xib in Resources */,
 				41D6F5F91DC2A58E008856F6 /* LaunchScreen.storyboard in Resources */,
 			);

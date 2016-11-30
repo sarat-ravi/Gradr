@@ -21,10 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.digitRecognizer = [[SRTDigitRecognizer alloc] initWithString:@"initString"];
-    NSString* classifierFileName = [self.digitRecognizer getInputString];
-    NSLog(@"%@", classifierFileName);
+    
+    // Get path of classifier.
+    NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString * knowledgePath = [resourcePath stringByAppendingPathComponent:@"Knowledge"];
+    NSString * classifierPath = [knowledgePath stringByAppendingPathComponent:@"trainedHandwrittenDigitsClassifier.yml"];
+    NSLog(@"Classifier Path: %@", classifierPath);
+    
+    // Initialize Digit recognizer.
+    self.digitRecognizer = [[SRTDigitRecognizer alloc] initWithString: classifierPath];
 }
 
 - (IBAction)onEraseButtonClicked:(id)sender {
