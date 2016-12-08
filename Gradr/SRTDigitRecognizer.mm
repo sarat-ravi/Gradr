@@ -85,11 +85,6 @@
 }
 
 - (std::shared_ptr<cv::Mat>)processMat:(std::shared_ptr<cv::Mat>) imageMat {
-    // Dialate
-    // Resize
-    // Convert to grayscale
-    // Invert
-    
     std::shared_ptr<cv::Mat> mat = imageMat;
     
     mat = [self invertMat: mat];
