@@ -17,6 +17,7 @@
 -(int) recognizeDigitFromImage: (UIImage*) image atFrame: (CGRect) bounds;
 
 // Useful function for debugging.
+-(UIImage*) getInputImage;
 -(UIImage*) getProcessedImage;
 
 @end

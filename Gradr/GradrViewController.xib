@@ -9,6 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GradrViewController">
             <connections>
                 <outlet property="canvasView" destination="tTa-Ew-lcg" id="bZL-J2-1fc"/>
+                <outlet property="leftImage" destination="JBw-7w-NGP" id="pnE-15-d2T"/>
+                <outlet property="rightImage" destination="o7h-8f-4Ls" id="HDs-2h-oPa"/>
                 <outlet property="totalScoreLabel" destination="LrW-jw-Vlq" id="AUT-gc-9gi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,18 +35,35 @@
                         <action selector="onEraseButtonClicked:" destination="-1" eventType="touchDown" id="MP5-Ug-5uU"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBw-7w-NGP">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="Lur-RQ-oUL"/>
+                        <constraint firstAttribute="height" constant="160" id="nN7-bR-hR6"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-8f-4Ls">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="K1X-ig-JOD"/>
+                        <constraint firstAttribute="height" constant="160" id="Uk2-XV-r8H"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="o7h-8f-4Ls" firstAttribute="top" secondItem="JBw-7w-NGP" secondAttribute="top" id="DRY-KU-69w"/>
                 <constraint firstItem="tTa-Ew-lcg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gx5-30-WSN"/>
                 <constraint firstItem="LrW-jw-Vlq" firstAttribute="centerY" secondItem="pM3-pe-A58" secondAttribute="centerY" id="N4Q-NQ-oc2"/>
+                <constraint firstItem="tTa-Ew-lcg" firstAttribute="top" secondItem="o7h-8f-4Ls" secondAttribute="bottom" constant="26" id="WCB-sz-RTh"/>
+                <constraint firstItem="JBw-7w-NGP" firstAttribute="top" secondItem="pM3-pe-A58" secondAttribute="bottom" constant="30" id="XJO-g0-BIE"/>
                 <constraint firstItem="LrW-jw-Vlq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="YmO-Xh-SIi"/>
-                <constraint firstItem="tTa-Ew-lcg" firstAttribute="top" secondItem="LrW-jw-Vlq" secondAttribute="bottom" constant="10" id="abp-PD-8JX"/>
+                <constraint firstItem="o7h-8f-4Ls" firstAttribute="leading" secondItem="JBw-7w-NGP" secondAttribute="trailing" constant="10" id="bF8-uJ-oF2"/>
+                <constraint firstItem="JBw-7w-NGP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="eU3-Nx-Avc"/>
                 <constraint firstItem="pM3-pe-A58" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="q2p-eS-cSG"/>
                 <constraint firstAttribute="trailing" secondItem="tTa-Ew-lcg" secondAttribute="trailing" id="xBd-yd-chG"/>
                 <constraint firstAttribute="bottom" secondItem="tTa-Ew-lcg" secondAttribute="bottom" id="xzC-Bk-lTE"/>
                 <constraint firstItem="LrW-jw-Vlq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yhY-uS-XaW"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="106.5"/>
         </view>
     </objects>
 </document>

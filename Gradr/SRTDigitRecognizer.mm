@@ -12,6 +12,7 @@
 
 @interface SRTDigitRecognizer () {
     std::shared_ptr<srt::DigitRecognizer> digitRecognizer;
+    std::shared_ptr<cv::Mat> inputMat;
     std::shared_ptr<cv::Mat> processedMat;
 }
 
@@ -71,6 +72,10 @@
 }
 
 
+-(UIImage *)getInputImage {
+    return [self getUIImageFromCVMat: inputMat];
+}
+
 -(UIImage *)getProcessedImage {
     return [self getUIImageFromCVMat: processedMat];
 }
@@ -115,6 +120,8 @@
 
 -(int) recognizeDigitFromImage: (UIImage*) image atFrame: (CGRect) bounds {
     std::shared_ptr<cv::Mat> mat = [self cvMatFromUIImage: image];
+    // NOTE: inputMat and procesedMat are used for debugging purposes.
+    inputMat = mat;
     cv::Rect rect = [self cvRectFromCGRect: bounds];
     processedMat = [self processMat: mat];
     return digitRecognizer->recognizeDigit(processedMat, rect);
