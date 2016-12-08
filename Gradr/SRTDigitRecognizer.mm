@@ -55,20 +55,50 @@
     return cvRect;
 }
 
-- (std::shared_ptr<cv::Mat>)processMat:(std::shared_ptr<cv::Mat>) imageMat {
-    // Resize
+- (std::shared_ptr<cv::Mat>) dilateMat: (std::shared_ptr<cv::Mat>) mat {
+    int dilationSize = 10;
+    cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT,
+                              cv::Size(2*dilationSize + 1, 2*dilationSize+1), cv::Point(dilationSize, dilationSize));
+    
+    std::shared_ptr<cv::Mat> dilatedMat = std::make_shared<cv::Mat>();
+    cv::dilate(*mat, *dilatedMat, element);
+    return dilatedMat;
+}
+
+- (std::shared_ptr<cv::Mat>) resizeMat: (std::shared_ptr<cv::Mat>) mat {
     cv::Size targetSize(28, 28);
-    cv::Mat targetMat;
-    cv::resize(*imageMat, targetMat, targetSize);
-    
-    // Convert to grayscale
-    cv::Mat targetMatGray;
-    cv::cvtColor(targetMat, targetMatGray, CV_RGB2GRAY);
-    
-    // Invert
-    cv::Mat invertedTargetMatGray = cv::Scalar::all(255) - targetMatGray;
+    std::shared_ptr<cv::Mat> targetMat = std::make_shared<cv::Mat>();
+    cv::resize(*mat, *targetMat, targetSize);
+    return targetMat;
+}
+
+- (std::shared_ptr<cv::Mat>) convertToGray: (std::shared_ptr<cv::Mat>) mat {
+    std::shared_ptr<cv::Mat> targetMatGray = std::make_shared<cv::Mat>();
+    cv::cvtColor(*mat, *targetMatGray, CV_RGB2GRAY);
+    return targetMatGray;
+}
+
+- (std::shared_ptr<cv::Mat>) invertMat: (std::shared_ptr<cv::Mat>) mat {
+    std:cv::Mat invertedTargetMatGray = cv::Scalar::all(255) - *mat;
     std::shared_ptr<cv::Mat> invertedTargetMatGrayPtr = std::make_shared<cv::Mat>(invertedTargetMatGray);
     return invertedTargetMatGrayPtr;
+}
+
+- (std::shared_ptr<cv::Mat>)processMat:(std::shared_ptr<cv::Mat>) imageMat {
+    // Dialate
+    // Resize
+    // Convert to grayscale
+    // Invert
+    
+    std::shared_ptr<cv::Mat> mat = imageMat;
+    
+    mat = [self invertMat: mat];
+    mat = [self dilateMat: mat];
+    mat = [self resizeMat: mat];
+    mat = [self convertToGray: mat];
+    processedMat = mat;
+    
+    return mat;
 }
 
 
@@ -123,8 +153,8 @@
     // NOTE: inputMat and procesedMat are used for debugging purposes.
     inputMat = mat;
     cv::Rect rect = [self cvRectFromCGRect: bounds];
-    processedMat = [self processMat: mat];
-    return digitRecognizer->recognizeDigit(processedMat, rect);
+    std::shared_ptr<cv::Mat> processedMatPtr = [self processMat: mat];
+    return digitRecognizer->recognizeDigit(processedMatPtr, rect);
 }
 
 -(NSString*) getInputString {
