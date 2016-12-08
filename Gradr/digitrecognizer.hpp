@@ -9,7 +9,7 @@ class DigitRecognizer {
 public:
     explicit DigitRecognizer(std::string inputString);
     const std::string& getInputString() const;
-    int recognizeDigit(cv::Mat, cv::Rect);
+    int recognizeDigit(std::shared_ptr<cv::Mat>, cv::Rect);
 private:
     std::string inputString;
 };

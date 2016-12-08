@@ -12,6 +12,7 @@
 
 @interface SRTDigitRecognizer () {
     std::shared_ptr<srt::DigitRecognizer> digitRecognizer;
+    std::shared_ptr<cv::Mat> processedMat;
 }
 
 @end
@@ -26,24 +27,24 @@
     return self;
 }
 
-- (cv::Mat)cvMatFromUIImage:(UIImage *)image {
+- (std::shared_ptr<cv::Mat>)cvMatFromUIImage:(UIImage *)image {
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
     CGFloat cols = image.size.width;
     CGFloat rows = image.size.height;
 
-    cv::Mat cvMat(rows, cols, CV_8UC4); // 8 bits per component, 4 channels (color channels + alpha)
+    std::shared_ptr<cv::Mat> cvMat = std::make_shared<cv::Mat>(rows, cols, CV_8UC4); // 8 bits per component, 4 channels (color channels + alpha)
 
-    CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to  data
+    CGContextRef contextRef = CGBitmapContextCreate(cvMat->data,                 // Pointer to  data
                                                  cols,                       // Width of bitmap
                                                  rows,                       // Height of bitmap
                                                  8,                          // Bits per component
-                                                 cvMat.step[0],              // Bytes per row
+                                                 cvMat->step[0],              // Bytes per row
                                                  colorSpace,                 // Colorspace
                                                  kCGImageAlphaNoneSkipLast |
                                                  kCGBitmapByteOrderDefault); // Bitmap info flags
 
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
-    CGContextRelease(contextRef);
+    // CGContextRelease(contextRef);
 
     return cvMat;
 }
@@ -53,11 +54,70 @@
     return cvRect;
 }
 
+- (std::shared_ptr<cv::Mat>)processMat:(std::shared_ptr<cv::Mat>) imageMat {
+    // Resize
+    cv::Size targetSize(28, 28);
+    cv::Mat targetMat;
+    cv::resize(*imageMat, targetMat, targetSize);
+    
+    // Convert to grayscale
+    cv::Mat targetMatGray;
+    cv::cvtColor(targetMat, targetMatGray, CV_RGB2GRAY);
+    
+    // Invert
+    cv::Mat invertedTargetMatGray = cv::Scalar::all(255) - targetMatGray;
+    std::shared_ptr<cv::Mat> invertedTargetMatGrayPtr = std::make_shared<cv::Mat>(invertedTargetMatGray);
+    return invertedTargetMatGrayPtr;
+}
+
+
+-(UIImage *)getProcessedImage {
+    return [self getUIImageFromCVMat: processedMat];
+}
+
+-(UIImage *)getUIImageFromCVMat:(std::shared_ptr<cv::Mat>)cvMat
+{
+    NSData *data = [NSData dataWithBytes:cvMat->data length:cvMat->elemSize()*cvMat->total()];
+    CGColorSpaceRef colorSpace;
+    
+    if (cvMat->elemSize() == 1) {
+        colorSpace = CGColorSpaceCreateDeviceGray();
+    } else {
+        colorSpace = CGColorSpaceCreateDeviceRGB();
+    }
+    
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+    
+    // Creating CGImage from cv::Mat
+    CGImageRef imageRef = CGImageCreate(cvMat->cols,                                 //width
+                                        cvMat->rows,                                 //height
+                                        8,                                          //bits per component
+                                        8 * cvMat->elemSize(),                       //bits per pixel
+                                        cvMat->step[0],                            //bytesPerRow
+                                        colorSpace,                                 //colorspace
+                                        kCGImageAlphaNone|kCGBitmapByteOrderDefault,// bitmap info
+                                        provider,                                   //CGDataProviderRef
+                                        NULL,                                       //decode
+                                        false,                                      //should interpolate
+                                        kCGRenderingIntentDefault                   //intent
+                                        );
+    
+    
+    // Getting UIImage from CGImage
+    UIImage *finalImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    CGDataProviderRelease(provider);
+    CGColorSpaceRelease(colorSpace);
+    
+    return finalImage;
+}
+
 
 -(int) recognizeDigitFromImage: (UIImage*) image atFrame: (CGRect) bounds {
-    cv::Mat mat = [self cvMatFromUIImage: image];
+    std::shared_ptr<cv::Mat> mat = [self cvMatFromUIImage: image];
     cv::Rect rect = [self cvRectFromCGRect: bounds];
-    return digitRecognizer->recognizeDigit(mat, rect);
+    processedMat = [self processMat: mat];
+    return digitRecognizer->recognizeDigit(processedMat, rect);
 }
 
 -(NSString*) getInputString {

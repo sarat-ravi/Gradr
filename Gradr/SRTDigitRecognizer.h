@@ -16,4 +16,7 @@
 -(NSString*) getInputString;
 -(int) recognizeDigitFromImage: (UIImage*) image atFrame: (CGRect) bounds;
 
+// Useful function for debugging.
+-(UIImage*) getProcessedImage;
+
 @end

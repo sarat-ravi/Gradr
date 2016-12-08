@@ -9,14 +9,14 @@ const std::string& DigitRecognizer::getInputString() const {
     return inputString;
 }
     
-int DigitRecognizer::recognizeDigit(cv::Mat imageMat, cv::Rect frame) {
+int DigitRecognizer::recognizeDigit(std::shared_ptr<cv::Mat> imageMat, cv::Rect frame) {
+    // Get feature vector from image
     cv::Ptr<cv::ml::SVM> svm = cv::ml::StatModel::load<cv::ml::SVM>(inputString);
-    cv::Mat feature = imageMat.clone().reshape(1,1);
+    cv::Mat feature = imageMat->clone().reshape(1,1);
     feature.convertTo(feature, CV_32F);
    
-    return svm->predict(feature);
-    
-    return 77;
+    int predictedValue = svm->predict(feature);
+    return predictedValue;
 }
     
 } // namespace srt
